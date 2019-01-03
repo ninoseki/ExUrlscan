@@ -1,0 +1,36 @@
+[
+  {
+    "request": {
+      "body": "{\"url\":\"http://neverssl.com\",\"public\":\"off\"}",
+      "headers": {
+        "API-Key": "YOUR_API_KEY",
+        "Content-Type": "application/json"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://urlscan.io/api/v1/scan/"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\n  \"message\": \"Submission successful\",\n  \"uuid\": \"a13f04fd-b3f1-4a20-b2ed-87701fc7be2a\",\n  \"result\": \"https://urlscan.io/result/a13f04fd-b3f1-4a20-b2ed-87701fc7be2a/\",\n  \"api\": \"https://urlscan.io/api/v1/result/a13f04fd-b3f1-4a20-b2ed-87701fc7be2a/\",\n  \"visibility\": \"private\",\n  \"options\": {\n    \"useragent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36\"\n  },\n  \"url\": \"http://neverssl.com\"\n}",
+      "headers": {
+        "Server": "nginx",
+        "Date": "Thu, 03 Jan 2019 07:57:07 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "471",
+        "Connection": "keep-alive",
+        "Vary": "Accept",
+        "ETag": "W/\"1d7-TJBiRagT3jRzbc8LZqDp4KLDSW0\"",
+        "Content-Security-Policy": "default-src 'self' data: www.google-analytics.com ; script-src 'self' data: www.google-analytics.com maps.googleapis.com developers.google.com www.google.com www.gstatic.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com www.google.com; img-src *; font-src 'self' fonts.gstatic.com; child-src 'self'; frame-src https://www.google.com/recaptcha/; form-action 'self'; upgrade-insecure-requests; report-uri https://492e9283a087a343fe461d889f3a068e.report-uri.io/r/default/csp/enforce",
+        "Referrer-Policy": "unsafe-url",
+        "Strict-Transport-Security": "max-age=63072000; includeSubdomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "DENY",
+        "X-XSS-Protection": "1; mode=block"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
