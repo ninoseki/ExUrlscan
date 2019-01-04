@@ -30,8 +30,11 @@ defmodule ExUrlscan.V1.Base do
       end
 
     case HTTPoison.request(type, url, body, headers) do
-      {:ok, response} -> parse_response(response)
-      {:error, %HTTPoison.Error{reason: reason}} -> {:error, reason}
+      {:ok, response} ->
+        parse_response(response)
+
+      {:error, reason} ->
+        raise(ExUrlscan.ConnectionError, reason: reason)
     end
   end
 
