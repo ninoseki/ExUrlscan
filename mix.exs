@@ -37,6 +37,7 @@ defmodule Urlscan.MixProject do
       {:excoveralls, "~> 0.10", only: :test},
       {:exvcr, "~> 0.10", only: :test},
       {:httpoison, "~> 1.5"},
+      {:mock, "~> 0.3.0", only: :test},
       {:poison, "~> 3.1"}
     ]
   end

@@ -2,8 +2,11 @@ defmodule UrlscanTest.ClientTest do
   use ExUnit.Case, async: true
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
+  import Mock
+
   alias ExUrlscan.V1.Client
   alias ExUrlscan.Configuration
+  alias ExUrlscan.ConnectionError
 
   setup do
     ExVCR.Config.cassette_library_dir("test/fixture/vcr_cassettes")
@@ -42,6 +45,17 @@ defmodule UrlscanTest.ClientTest do
       {:ok, json} = Client.scan("http://neverssl.com", public: "off")
       url = Map.get(json, "url")
       assert url == "http://neverssl.com"
+    end
+  end
+
+  test "when a connection error occurs" do
+    with_mocks([
+      {HTTPoison, [:passthrough],
+       [request: fn _type, _url, _body, _headers -> raise(%ConnectionError{reason: "test"}) end]}
+    ]) do
+      assert_raise ConnectionError, "connection error", fn ->
+        Client.result("33db13c5-ad2d-4fa2-8f92-fcb8c9528755")
+      end
     end
   end
 end
