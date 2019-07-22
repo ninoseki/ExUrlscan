@@ -15,6 +15,14 @@ defmodule ExUrlscan.V1.Client do
   end
 
   @doc """
+  Wrapper function for: https://urlscan.io/about-api/#result (DOM)
+  """
+  @spec dom(any) :: {:error, false | nil | true | binary | [any] | number | map} | {:ok, any}
+  def dom(uuid) do
+    request(:get, "/dom/#{uuid}/")
+  end
+
+  @doc """
   Wrapper function for: https://ExUrlscan.io/about-api/#submission
   """
   def scan(url) do
