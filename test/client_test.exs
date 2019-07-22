@@ -24,6 +24,13 @@ defmodule UrlscanTest.ClientTest do
     end
   end
 
+  test "#dom/1" do
+    use_cassette "dom" do
+      {:ok, dom} = Client.dom("33db13c5-ad2d-4fa2-8f92-fcb8c9528755")
+      assert is_binary(dom)
+    end
+  end
+
   test "#search/1" do
     use_cassette "search" do
       {:ok, json} = Client.search(q: "domain:urlscan.io")

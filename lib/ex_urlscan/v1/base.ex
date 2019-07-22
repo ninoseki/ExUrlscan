@@ -38,10 +38,27 @@ defmodule ExUrlscan.V1.Base do
     end
   end
 
-  defp parse_response(%{status_code: ok, body: body}) when ok in 200..299 do
+  defp parse_response(%{status_code: ok, body: body, headers: headers}) when ok in 200..299 do
+    header_map = headers |> Map.new()
+
+    gzip? =
+      Enum.any?(headers, fn {name, value} -> name == "Content-Encoding" && value == "gzip" end)
+
     res =
-      body
-      |> Poison.decode!()
+      case header_map do
+        %{"Content-Type" => "application/json; charset=utf-8"} ->
+          body |> Poison.decode!()
+
+        %{"Content-Type" => "text/plain"} ->
+          if gzip? do
+            :zlib.gunzip(body)
+          else
+            body
+          end
+
+        _ ->
+          body
+      end
 
     {:ok, res}
   end

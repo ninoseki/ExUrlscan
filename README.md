@@ -34,8 +34,13 @@ export URLSCAN_API_KEY="YOUR_API_KEY"
 ## Usage
 
 ```elixir
+uuid = "xxx"
+
 # result
 ExUrlscan.V1.Client.result(uuid)
+
+# dom
+ExUrlscan.V1.Client.dom(uuid)
 
 # search
 ExUrlscan.V1.Client.search(q: "domain:urlscan.io")
