@@ -5,7 +5,7 @@ defmodule Urlscan.MixProject do
     [
       app: :ex_urlscan,
       version: "0.1.1",
-      elixir: "~> 1.7",
+      elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       description: "Elixir API client for urlscan.io",
@@ -38,7 +38,7 @@ defmodule Urlscan.MixProject do
       {:exvcr, "~> 0.10", only: :test},
       {:httpoison, "~> 1.5"},
       {:mock, "~> 0.3.0", only: :test},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 4.0"}
     ]
   end
 
