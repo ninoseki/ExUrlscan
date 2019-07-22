@@ -1,5 +1,6 @@
 # ExUrlscan
 
+![Hex.pm](https://img.shields.io/hexpm/v/ex_urlscan.svg)
 [![Build Status](https://travis-ci.org/ninoseki/ExUrlscan.svg?branch=master)](https://travis-ci.org/ninoseki/ExUrlscan)
 [![Coverage Status](https://coveralls.io/repos/github/ninoseki/ExUrlscan/badge.svg?branch=master)](https://coveralls.io/github/ninoseki/ExUrlscan?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fc6da78722d54e9796e8463909ed8690)](https://www.codacy.com/app/ninoseki/ExUrlscan)
@@ -14,7 +15,7 @@ Add ExUrlscan to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:ex_urlscan, "~> 0.1.0}]
+  [{:ex_urlscan, "~> 0.1"}]
 end
 ```
 
